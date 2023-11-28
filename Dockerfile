@@ -32,7 +32,7 @@ RUN echo "**** install node family ****" && \
     echo "**** install hoppscoth ****" && \
     mkdir -p \
       /app/ && \
-    if [ -z ${HOPPSCOTH_RELEASE+x} ]; then \
+    if [ -z ${HOPPSCOTH_RELEASE} ]; then \
       HOPPSCOTH_RELEASE=$(curl -sX GET "https://api.github.com/repos/${HOPPSCOTH_REPO}/releases/latest" \
       | awk '/tag_name/{print $4;exit}' FS='[""]'); \
     fi && \
